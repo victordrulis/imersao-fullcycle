@@ -22,6 +22,8 @@ import { Transaction } from './transactions/entities/transaction.entity';
       synchronize: true,
       sync: {
         alter: true,
+        // Force recria o BD do zero. CUIDADO!
+        // force: true,
       }
     }),
     TransactionsModule,
