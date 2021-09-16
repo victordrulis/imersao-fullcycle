@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, 
+import { Controller, Get, Post, Body,
     // Patch, Param, Delete 
 } from '@nestjs/common';
 import { TransactionsService } from './transactions.service';
@@ -9,8 +9,9 @@ import { CreateTransactionDto } from './dto/create-transaction.dto';
 export class TransactionsController {
   constructor(private readonly transactionsService: TransactionsService) {}
 
-  @Post()
   // @Body() pra extrair o conteudo do body da requisição.
+  // Para ativar a validação feita do DTO apenas neste controller, inserir o pipe -> @Body(new ValidationPipe)
+  @Post()
   create(@Body() createTransactionDto: CreateTransactionDto) {
     return this.transactionsService.create(createTransactionDto);
   }

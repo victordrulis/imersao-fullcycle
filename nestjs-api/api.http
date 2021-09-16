@@ -12,3 +12,9 @@ Content-Type: application/json
   "amount": 100.0,
   "type": "credit"
 }
+
+###
+POST http://localhost:3000/transactions
+Content-Type: application/json
+
+{}
