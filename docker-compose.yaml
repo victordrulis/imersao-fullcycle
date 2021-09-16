@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nestjsapp:
+    build: ./nestjs-api
+    entrypoint: dockerize -wait tcp://dbnestjs:3306 -timeout 40s ./.docker/entrypoint.sh
+    ports:
+      - 3000:3000
+    volumes:
+      - ./nestjs-api:/home/node/app
+    depends_on:
+      - dbnestjs
+
+  dbnestjs:
+    build: ../docker/db/mysql5.7
+    restart: always
+    tty: true
+    volumes:
+      - ../docker/volumes/mysql5.7/data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=fin
+      - MYSQL_ROOT_PASSWORD=root
