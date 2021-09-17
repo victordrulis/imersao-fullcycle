@@ -1,0 +1,13 @@
+version: "3"
+services:
+  keycloakapp:
+    image: jboss/keycloak:15.0.0
+    # volumes:
+    #   - ./keycloak:/opt/jboss/keycloak/standalone/data
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      # - KEYCLOAK_IMPORT=/tmp/test-realm-export.json
+      - DB_VERSION=h2
+    ports:
+      - 7777:8080
