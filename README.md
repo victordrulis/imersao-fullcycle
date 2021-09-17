@@ -1,7 +1,9 @@
-# imersao-fullcycle
-Estudos para Imersão Fullcycle https://imersao.fullcycle.com.br/
+# Imersão Fullcycle
+# Nest.js
+Estudos para Imersão Fullcycle https://imersao.fullcycle.com.br/ 
+Implementação da API REST.
 
-# Módulo #1
+# Conteúdo
 - Ambientes com Docker
 - Nest.js
 - API REST
