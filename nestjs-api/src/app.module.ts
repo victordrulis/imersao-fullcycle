@@ -8,6 +8,8 @@ import { Transaction } from './transactions/entities/transaction.entity';
 import { AccountsModule } from './accounts/accounts.module';
 import { Account } from './accounts/entities/account.entity';
 import { CommonModule } from './common/common.module';
+import { AuthModule } from './auth/auth.module';
+import { TenantModule } from './tenant/tenant.module';
 
 // Decorators - servem para classe, metodos, etc..
 @Module({
@@ -26,12 +28,14 @@ import { CommonModule } from './common/common.module';
       sync: {
         alter: true,
         // Force recria o BD do zero. CUIDADO!
-        force: true,
+        // force: true,
       }
     }),
     TransactionsModule,
     AccountsModule,
     CommonModule,
+    AuthModule,
+    TenantModule,
   ],
   controllers: [AppController],
   providers: [AppService],
