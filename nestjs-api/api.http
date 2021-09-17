@@ -5,12 +5,13 @@ POST http://localhost:3000/transactions
 Content-Type: application/json
 
 {
-  "payment_date": "2021-01-02",
-  "name": "Nova conta 2",
+  "payment_date": "2021-01-01",
+  "name": "Nova conta 1",
   "description": "Descricao da conta",
-  "category": "category2",
+  "category": "category1",
   "amount": 100.0,
-  "type": "credit"
+  "type": "debit",
+  "account_id": "ff0b3f28-bbbc-4389-bca5-154d00de04cc"
 }
 
 ###
@@ -18,3 +19,15 @@ POST http://localhost:3000/transactions
 Content-Type: application/json
 
 {}
+
+###
+GET http://localhost:3000/accounts
+
+###
+POST http://localhost:3000/accounts
+Content-Type: application/json
+
+{
+  "name": "Account 1",
+  "subdomain": "tenant1"
+}
